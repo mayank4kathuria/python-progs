@@ -3,7 +3,8 @@
 from cs50 import get_int
 
 def main():
-	"""Prints the Mario Pyramid"""
+	"""Prints the Mario game Pyramid"""
+	
 	while True:
 		h = get_int()
 
