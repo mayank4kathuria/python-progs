@@ -4,13 +4,13 @@ def compute(x,y,a,b):
     """Computing a shit matrix!"""
     l = []
 
-    # Delete
+    # Deletion
 
-    temp = matrix[x][y - 1][0] + 1
+    temp = matrix[x - 1][y][0] + 1
     l.append((temp,1))
 
-    # insert
-    temp = matrix[x - 1][y][0] + 1
+    # Insertion
+    temp = matrix[x][y - 1][0] + 1
     l.append((temp,2))
 
     # substitude
@@ -52,9 +52,9 @@ def distances(a, b):
     matrix[0][0] = (0,0)
 
     # Computation
-    for x in range(1,len(a) + 1):
-        for y in range(1,len(b) + 1):
-            matrix[x][y] = compute(x,y,a,b)
+    for y in range(1,len(b) + 1):
+        for x in range(1,len(a) + 1):
+    	    matrix[x][y] = compute(x,y,a,b)
 
     for x in range(len(a) + 1):
         for y in range(len(b) + 1):
@@ -64,4 +64,4 @@ def distances(a, b):
     print("We can convert \"{}\" -> \"{}\" in {} minimum number of steps".format(a,b,matrix[len(a)][len(b)][0]))
     return matrix
 
-distances("cat","ate")
+distances("flyware","warefry")
